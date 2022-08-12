@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS inspirational_quote_db;
+DROP DATABASE IF EXISTS quote_db;
 
-CREATE DATABASE inspirational_quote_db;
+CREATE DATABASE quote_db;
