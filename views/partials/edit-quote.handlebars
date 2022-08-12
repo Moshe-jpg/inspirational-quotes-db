@@ -1,0 +1,35 @@
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Quote
+  </h2>
+  <form class="edit-quote-form">
+    <div>
+      <input name="quote" type="text" value="{{quote}}" />
+    </div>
+    <div>
+      {{format_date quote.created_at}}
+      |
+      <a href="/quote/{{quote.id}}">{{quote.comments.length}}
+        {{format_plural "comment" quote.comments.length}}</a>
+    </div>
+    <button type="submit">Save quote</button>
+    <button type="button" class="delete-quote-btn">Delete quote</button>
+  </form>
+</article>
+
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">Add comment</button>
+  </div>
+</form>
+
+{{> comments quote.comments}}
+
+<script src="/javascript/edit-quote.js"></script>
+<script src="/javascript/delete-quote.js"></script>
+<script src="/javascript/comment.js"></script>

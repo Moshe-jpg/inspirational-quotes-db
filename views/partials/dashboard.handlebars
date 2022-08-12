@@ -1,0 +1,27 @@
+<section>
+  <h2>Write a new quote</h2>
+
+  <form class="new-post-form">
+    <div>
+      <label for="quote">Quote</label>
+      <input type="text" id="quote" name="quote" />
+    </div>
+    <button type="submit" class="btn">Create</button>
+  </form>
+</section>
+
+{{#if quotes.length}}
+<section>
+  <h2>Your Quotes</h2>
+  <ol>
+    {{#each quotes as |quote|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{quote.id}}" class="edit-link">Edit Quote</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-quote.js"></script>
