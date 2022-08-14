@@ -1,4 +1,4 @@
-const newQuoteForm = document.querySelector(".new-post-form");
+const newQuoteForm = document.querySelector(".new-quote-form");
 
 async function newFormHandler(event) {
   event.preventDefault();
