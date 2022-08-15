@@ -12,16 +12,16 @@ Quote.init(
       primaryKey: true,
       autoIncrement: true
     },
-    title: {
+    quoter: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      
     },
     quote: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isURL: true
-      }
+      min:15,
+      max: 45,
     },
     user_id: {
       type: DataTypes.INTEGER,
