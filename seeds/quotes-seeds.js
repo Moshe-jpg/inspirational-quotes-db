@@ -1,4 +1,4 @@
-const { Post } = require('../models');
+const Quote = require('../models/Quote.js');
 
 const quotedata = [
   {
@@ -104,6 +104,6 @@ const quotedata = [
   }
 ];
 
-const seedPosts = () => Post.bulkCreate(postdata);
+const seedQuotes = () => Quote.bulkCreate(quotedata);
 
-module.exports = seedPosts;
+module.exports = seedQuotes;

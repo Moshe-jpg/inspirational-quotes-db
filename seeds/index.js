@@ -14,7 +14,7 @@ const seedAll = async () => {
   await seedQuotes();
   console.log('--------------');
 
-  await seedComments();
+  //await seedComments();
   console.log('--------------');
 
 

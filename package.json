@@ -7,11 +7,12 @@
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
     "mysql2": "^2.3.3",
+    "nodemon": "^2.0.19",
     "sequelize": "^6.21.3",
     "validator": "^13.7.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "seeds": "node seeds/index.js"
   },
   "name": "inspirational-quotes-db---group-project-2",
