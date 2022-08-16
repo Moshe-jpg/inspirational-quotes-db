@@ -1,10 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-// create our Quote model
-class Quote extends Model {}
-    
 
-Quote.init(
+class Comment extends Model {}
+
+Comment.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -12,21 +11,24 @@ Quote.init(
       primaryKey: true,
       autoIncrement: true
     },
-    quoter: {
+    comment_text: {
       type: DataTypes.STRING,
       allowNull: false,
-      
-    },
-    quote: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      min:15,
-      max: 45,
+      validate: {
+        len: [1]
+      }
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
+        key: 'id'
+      }
+    },
+    quote_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'quote',
         key: 'id'
       }
     }
@@ -35,8 +37,8 @@ Quote.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'quote'
+    modelName: 'comment'
   }
 );
 
-module.exports = Quote;
+module.exports = Comment;

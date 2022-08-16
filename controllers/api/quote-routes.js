@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     attributes: [
       'id',
       'quote',
-      'title',
+      'quoter',
       'created_at',
     ],
     include: [
@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
     attributes: [
       'id',
       'quote',
-      'title',
+      'quoter',
       'created_at',
       
     ],
@@ -74,7 +74,9 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   Quote.update(
     {
-      title: req.body.title
+      quote: req.body.quote,
+      quoter: req.body.quoter
+
     },
     {
       where: {
