@@ -1,16 +1,14 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Quote, User, Comment, Vote } = require('../../models');
-const withAuth = require('../../utils/auth');
+const { Quote, User, } = require('../../models');
 
-// get all users
+
 router.get('/', (req, res) => {
-  console.log('======================');
   Quote.findAll({
     attributes: [
       'id',
       'quote',
-      'title',
+      'quoter',
       'created_at',
     ],
     include: [
@@ -35,7 +33,7 @@ router.get('/:id', (req, res) => {
     attributes: [
       'id',
       'quote',
-      'title',
+      'quoter',
       'created_at',
       
     ],
@@ -59,7 +57,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
  
   Quote.create({
     title: req.body.title,
@@ -76,7 +74,9 @@ router.post('/', withAuth, (req, res) => {
 router.put('/:id', (req, res) => {
   Quote.update(
     {
-      title: req.body.title
+      quote: req.body.quote,
+      quoter: req.body.quoter
+
     },
     {
       where: {

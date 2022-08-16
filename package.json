@@ -1,17 +1,26 @@
 {
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.4",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
     "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3",
     "validator": "^13.7.0"
   },
   "scripts": {
+<<<<<<< HEAD
     "start": "node server.js"
   },
   "name": "inspirational-quotes-db",
+=======
+    "start": "node server.js",
+    "seeds": "node seeds/index.js"
+  },
+  "name": "inspirational-quotes-db---group-project-2",
+>>>>>>> 804f76836f7298857a5477db1caaa27f2abaaeff
   "description": "��#\u0000 \u0000I\u0000n\u0000s\u0000p\u0000i\u0000r\u0000a\u0000t\u0000i\u0000o\u0000n\u0000a\u0000l\u0000 \u0000Q\u0000u\u0000o\u0000t\u0000e\u0000s\u0000 \u0000D\u0000B\u0000\r\u0000 \u0000",
   "version": "1.0.0",
   "main": "server.js",

@@ -19,7 +19,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Quote,
-        attributes: ['id', 'title', 'quote', 'created_at']
+        attributes: ['id', 'quoter', 'quote', 'created_at']
       },
      
     ]
@@ -49,7 +49,6 @@ router.post('/', (req, res) => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
-  
         res.json(dbUserData);
       });
     })
@@ -58,9 +57,6 @@ router.post('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-
-
-
 router.put('/:id', (req, res) => {
   
   User.update(req.body, {
