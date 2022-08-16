@@ -41,6 +41,7 @@ button {
   transition: background-color 0.1s;
   cursor: pointer;
   border-radius: 5px;
+  letter-spacing: 1.25px;
 }
 
 button:hover {
@@ -180,4 +181,11 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 110%;
+}
+
+@media screen and (max-width: 550px){
+  button {
+    width: 25vw;
+    letter-spacing: 1px;
+  }
 }
