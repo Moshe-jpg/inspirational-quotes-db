@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const {Quote,User,Comment}= require('../utils/auth');
+const {Quote,User,Comment}= require('../models');
 const getAuth = require('../utils/auth');
 
 router.get('/',getAuth,(req,res)=>{
+    
     Quote.findAll({
         where:{
             user_id: req.session.user_id
@@ -29,7 +30,7 @@ router.get('/',getAuth,(req,res)=>{
         ]
     }).then(dbQuoteData => {
         const quotes= dbQuoteData.map(quote => quote.get({plain: true}));
-        res.render('dashboard',{quotes, loggedIn})
+        res.render('dashboard',{quotes, loggedIn: true});
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
