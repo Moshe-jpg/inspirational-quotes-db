@@ -60,7 +60,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
  
   Quote.create({
-    title: req.body.title,
+    //quoter: req.body.title,
     quote: req.body.quote,
     user_id: req.session.user_id
   })
