@@ -298,7 +298,7 @@ footer {
     flex-basis: 100%;
   }
 
-  h1 {
+  header h1 {
     font-size: 1em;
   }
 }
