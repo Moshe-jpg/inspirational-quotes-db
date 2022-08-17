@@ -1,4 +1,4 @@
-<article class="post">
+<article class="quote">
   <div class="title">
     <a href="{{post_url}}" target="_blank">{{title}}</a>
     {{!-- <span>({{format_url post_url}})</span> --}}
@@ -15,7 +15,7 @@
     on
     {{format_date created_at}}
     |
-    <a href="/post/{{id}}">{{comments.length}}
+    <a href="/quote/{{id}}">{{comments.length}}
       {{format_plural "comment" comments.length}}</a>
   </div>
 </article>
