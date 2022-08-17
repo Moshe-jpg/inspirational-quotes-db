@@ -131,7 +131,7 @@ button:hover {
 .quote-list li {
   background-color: #876429;
   color: #ffffff;
-  flex-basis: 30%;
+  flex-basis: 40%;
   list-style: none;
   font-size: 1em;
   font-weight: bolder;
