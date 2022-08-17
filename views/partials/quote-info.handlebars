@@ -4,9 +4,13 @@
     {{!-- <span>({{format_url post_url}})</span> --}}
   </div>
   <div class="meta">
-    {{vote_count}}
-    {{format_plural "point" vote_count}}
+    <q>
+    {{quote}}
+    </q>
+    </br>
     by
+    {{quoter}}
+    posted by
     {{user.username}}
     on
     {{format_date created_at}}
