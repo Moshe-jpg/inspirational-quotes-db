@@ -119,6 +119,10 @@ button:hover {
   transition: 0.5s;
 }
 
+.add-comment-btn {
+  height: auto;
+}
+
 .quote-list {
   margin: 5%;
   display: flex;
@@ -139,33 +143,34 @@ button:hover {
   margin: 10px;
   text-align: center;
   line-height: 75px;
+  padding: 10px 22px;
 }
 
-/* textarea,
+textarea,
 input {
   padding: 0.5%;
   border-radius: 5px;
   border: 1px solid #ccc;
-} */
+}
 
-/* textarea:focus,
+ textarea:focus,
 input:focus {
   outline: none;
   border: 1px solid #3486eb;
-} */
+}
 
-/* textarea {
+textarea {
   min-width: 40%;
   min-height: 100px;
-} */
+}
 
 form > div {
   margin-bottom: 2%;
 }
 
-/* form label {
+form label {
   display: block;
-} */
+}
 
 .wrapper {
   width: 100%;
@@ -215,12 +220,12 @@ header h1 {
   background-color: #ff643d;
 }
 
-.post {
+.quote {
   margin-bottom: 2%;
   line-height: 150%;
 }
 
-.post .title span {
+.quote .title span {
   font-style: italic;
   font-size: 90%;
   color: #7d7d7d;
@@ -231,8 +236,14 @@ header h1 {
   margin: -1.5% 0 2% 0;
 }
 
+.single-quote {
+  text-align: center;
+  margin: 2% 5%;
+}
+
 .comment-form {
   margin-bottom: 5%;
+  text-align: center;
 }
 
 .comment {
@@ -250,11 +261,11 @@ header h1 {
   opacity: 0.6;
 }
 
-.new-post-form input {
+.new-quote-form input {
   width: 300px;
 }
 
-.edit-post-form {
+.edit-quote-form {
   margin-bottom: 5%;
 }
 
@@ -264,6 +275,11 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 110%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 
 @media screen and (max-width: 550px) {
