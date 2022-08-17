@@ -69,7 +69,8 @@ a:hover {
   transition: 0.5s;
 }
 
-.inputBox input:valid ~ span, .inputBox input:focus ~ span {
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
   color: rgb(0, 128, 107);
   transform: translateX(30px) translateY(-7px);
   font-size: 0.65em;
@@ -80,13 +81,15 @@ a:hover {
   letter-spacing: 0.2em;
 }
 
-.inputBox:nth-child(2) input:valid ~ span, .inputBox:nth-child(2) input:focus ~ span{
+.inputBox:nth-child(2) input:valid ~ span,
+.inputBox:nth-child(2) input:focus ~ span {
   background: rgb(0, 128, 107);
   color: #1d2b3a;
   border-radius: 2px;
 }
 
-.inputBox input:valid, .inputBox input:focus {
+.inputBox input:valid,
+.inputBox input:focus {
   border: 1px solid rgb(0, 128, 107);
 }
 
@@ -97,12 +100,12 @@ a:hover {
 }
 
 button {
-  background-color: #FF1E00;
+  background-color: #000000;
   border: 0;
   height: 5vh;
   width: 10vw;
   padding: 1%;
-  color: white;
+  color: rgb(0, 128, 107);
   font-weight: bold;
   transition: background-color 0.1s;
   cursor: pointer;
@@ -111,14 +114,31 @@ button {
 }
 
 button:hover {
-  background-color: #000000;
-  color: #3B9AE1;
-  transition: .5s;
+  background-color: rgb(0, 128, 107);
+  color: #ffffff;
+  transition: 0.5s;
 }
 
-.post-list {
-  margin: 0;
+.quote-list {
+  margin: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   padding: 0;
+}
+
+.quote-list li {
+  background-color: #876429;
+  color: #ffffff;
+  flex-basis: 30%;
+  list-style: none;
+  font-size: 1em;
+  font-weight: bolder;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
 }
 
 /* textarea,
@@ -168,32 +188,23 @@ header h1 {
   font-size: 2em;
 }
 
-main {
+.login-page {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    flex-direction: column;
-    gap: 30px;
-    background: #1d2b3a;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 30px;
+  background: #1d2b3a;
 }
 
-.btn-no-style {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-decoration: none;
-  color: #225ca3;
-  font-size: 100%;
-  font-weight: bold;
-  transition: color 0.1s;
-  margin-left: 16px;
-}
-
-.btn-no-style:hover {
-  background: none;
-  color: #3486eb;
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  margin: 15% 20%;
 }
 
 .delete-post-btn {
@@ -255,7 +266,7 @@ footer {
   font-size: 110%;
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 550px) {
   button {
     width: 25vw;
     letter-spacing: 1px;
