@@ -7,6 +7,10 @@
       <input type="text" id="quote" name="quote" />
       <span>Quote</span>
     </div>
+    <div class="inputBox">
+      <input type="text" id="quoter" name="quoter" />
+      <span>Quoter</span>
+    </div>
     <div class="inputBoxBtn">
       <button type="submit" class="btn">Create</button>
     </div>
@@ -19,7 +23,7 @@
   <ol>
     {{#each quotes as |quote|}}
     <li>
-      {{> post-info post}}
+      {{> quote-info quote}}
       <a href="/dashboard/edit/{{quote.id}}" class="edit-link">Edit Quote</a>
     </li>
     {{/each}}
