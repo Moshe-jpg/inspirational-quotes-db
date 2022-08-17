@@ -293,4 +293,8 @@ footer {
     width: 25vw;
     letter-spacing: 1px;
   }
+
+  .quote-list li {
+    flex-basis: 100%;
+  }
 }
