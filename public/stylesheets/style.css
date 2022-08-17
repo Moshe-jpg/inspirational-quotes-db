@@ -144,6 +144,7 @@ button:hover {
   text-align: center;
   line-height: 75px;
   padding: 10px 22px;
+  overflow-wrap: break-word;
 }
 
 textarea,
@@ -153,7 +154,7 @@ input {
   border: 1px solid #ccc;
 }
 
- textarea:focus,
+textarea:focus,
 input:focus {
   outline: none;
   border: 1px solid #3486eb;
@@ -251,10 +252,6 @@ header h1 {
   margin-bottom: 1%;
 }
 
-.comment:nth-child(odd) {
-  background-color: #fff5eb;
-}
-
 .comment .meta {
   font-size: 90%;
   margin-bottom: 0.5%;
@@ -263,6 +260,15 @@ header h1 {
 
 .new-quote-form input {
   width: 300px;
+}
+
+.edit-quote {
+  text-align: center;
+}
+
+#edit-quote-input {
+  min-width: 40%;
+  min-height: 100px;
 }
 
 .edit-quote-form {
