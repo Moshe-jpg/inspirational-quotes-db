@@ -2,41 +2,110 @@
   box-sizing: border-box;
 }
 
-body,
-html {
-  height: 100%;
+body {
+  min-height: 100vh;
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  color: #333;
+  background: #1d2b3a;
+}
+
+body,
+html {
+  height: 100%;
+  color: #fff;
+  gap: 30px;
+  background: #1d2b3a;
 }
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: #ffffff;
   font-weight: bold;
-  transition: color 0.1s;
+  transition: color 0.5s;
 }
 
 a:hover {
-  color: #3486eb;
+  color: rgb(0, 128, 107);
+  transition: color 0.5s;
 }
 
-.login-form, .signup-form {
+/* .login-form, .signup-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 8%;
+  padding-top: 2%;
+} */
+
+/* Styling for the forms */
+
+.inputBox {
+  position: relative;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #1d2b3a;
+  border-radius: 5px;
+  outline: none;
+  color: #ffffff;
+  font-size: 1em;
+  transition: 0.5s;
+}
+
+.inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+  color: rgb(0, 128, 107);
+  transform: translateX(30px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background: #1d2b3a;
+  border-left: 1px solid rgb(0, 128, 107);
+  border-right: 1px solid rgb(0, 128, 107);
+  letter-spacing: 0.2em;
+}
+
+.inputBox:nth-child(2) input:valid ~ span,
+.inputBox:nth-child(2) input:focus ~ span {
+  background: rgb(0, 128, 107);
+  color: #1d2b3a;
+  border-radius: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+  border: 1px solid rgb(0, 128, 107);
+}
+
+/* The input buttons */
+
+.inputBoxBtn {
+  text-align: center;
 }
 
 button {
-  background-color: #FF1E00;
+  background-color: #000000;
   border: 0;
   height: 5vh;
   width: 10vw;
   padding: 1%;
-  color: white;
+  color: rgb(0, 128, 107);
   font-weight: bold;
   transition: background-color 0.1s;
   cursor: pointer;
@@ -45,13 +114,37 @@ button {
 }
 
 button:hover {
-  background-color: #000000;
-  transition: .5s;
+  background-color: rgb(0, 128, 107);
+  color: #ffffff;
+  transition: 0.5s;
 }
 
-.post-list {
-  margin: 0;
+.add-comment-btn {
+  height: auto;
+}
+
+.quote-list {
+  margin: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   padding: 0;
+}
+
+.quote-list li {
+  background-color: #876429;
+  color: #ffffff;
+  flex-basis: 40%;
+  list-style: none;
+  font-size: 1em;
+  font-weight: bolder;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  padding: 10px 22px;
+  overflow-wrap: break-word;
 }
 
 textarea,
@@ -98,30 +191,26 @@ header {
 }
 
 header h1 {
-  font-size: 1em;
+  font-size: 2em;
 }
 
-main {
-  flex: 1;
-  padding: 2% 4%;
+.login-page {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  min-height: 100vh;
+  /* flex-direction: column; */
+  gap: 30px;
+  background: #1d2b3a;
 }
 
-.btn-no-style {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-decoration: none;
-  color: #225ca3;
-  font-size: 100%;
-  font-weight: bold;
-  transition: color 0.1s;
-  margin-left: 16px;
-}
-
-.btn-no-style:hover {
-  background: none;
-  color: #3486eb;
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  margin: 15% 20%;
 }
 
 .delete-post-btn {
@@ -132,12 +221,12 @@ main {
   background-color: #ff643d;
 }
 
-.post {
+.quote {
   margin-bottom: 2%;
   line-height: 150%;
 }
 
-.post .title span {
+.quote .title span {
   font-style: italic;
   font-size: 90%;
   color: #7d7d7d;
@@ -148,17 +237,19 @@ main {
   margin: -1.5% 0 2% 0;
 }
 
+.single-quote {
+  text-align: center;
+  margin: 2% 5%;
+}
+
 .comment-form {
   margin-bottom: 5%;
+  text-align: center;
 }
 
 .comment {
   padding: 1%;
   margin-bottom: 1%;
-}
-
-.comment:nth-child(odd) {
-  background-color: #fff5eb;
 }
 
 .comment .meta {
@@ -167,11 +258,20 @@ main {
   opacity: 0.6;
 }
 
-.new-post-form input {
+.new-quote-form input {
   width: 300px;
 }
 
-.edit-post-form {
+.edit-quote {
+  text-align: center;
+}
+
+#edit-quote-input {
+  min-width: 40%;
+  min-height: 100px;
+}
+
+.edit-quote-form {
   margin-bottom: 5%;
 }
 
@@ -181,11 +281,24 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 110%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 550px) {
   button {
     width: 25vw;
     letter-spacing: 1px;
+  }
+
+  .quote-list li {
+    flex-basis: 100%;
+  }
+
+  header h1 {
+    font-size: 1em;
   }
 }

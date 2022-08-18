@@ -1,14 +1,17 @@
-const newQuoteForm = document.querySelector(".new-quote-form");
+//const newQuoteForm = document.querySelector(".new-quote-form");
 
 async function newFormHandler(event) {
   event.preventDefault();
 
   const quote = document.querySelector('input[name="quote"]').value;
+  const quoter = document.querySelector('input[name="quoter"]').value;
+
 
   const response = await fetch(`/api/quotes`, {
     method: "POST",
     body: JSON.stringify({
-      quote
+      quote,
+      quoter
     }),
     headers: {
       "Content-Type": "application/json",
@@ -22,4 +25,4 @@ async function newFormHandler(event) {
   }
 }
 
-newQuoteForm.addEventListener("submit", newFormHandler);
+document.querySelector('.new-quote-form').addEventListener("submit", newFormHandler);

@@ -1,12 +1,19 @@
+<div class="dashboard-page">
 <section>
   <h2>Write a new quote</h2>
 
-  <form class="new-post-form">
-    <div>
-      <label for="quote">Quote</label>
+  <form class="new-quote-form">
+    <div class="inputBox">
       <input type="text" id="quote" name="quote" />
+      <span>Quote</span>
     </div>
-    <button type="submit" class="btn">Create</button>
+    <div class="inputBox">
+      <input type="text" id="quoter" name="quoter" />
+      <span>Quoter</span>
+    </div>
+    <div class="inputBoxBtn">
+      <button type="submit" class="btn">Create</button>
+    </div>
   </form>
 </section>
 
@@ -16,12 +23,13 @@
   <ol>
     {{#each quotes as |quote|}}
     <li>
-      {{> post-info post}}
+      {{> quote-info quote}}
       <a href="/dashboard/edit/{{quote.id}}" class="edit-link">Edit Quote</a>
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
+</div>
 
 <script src="/javascript/add-quote.js"></script>

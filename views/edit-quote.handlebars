@@ -1,11 +1,10 @@
-<article>
-  <a href="/dashboard"> &larr; Back To Dashboard</a>
+<article class="edit-quote">
   <h2>
     Edit Quote
   </h2>
   <form class="edit-quote-form">
     <div>
-      <input name="quote" type="text" value="{{quote}}" />
+      <input name="quote" type="text" value="{{quote.quote}}" id="edit-quote-input"/>
     </div>
     <div>
       {{format_date quote.created_at}}

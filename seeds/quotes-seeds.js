@@ -13,7 +13,7 @@ const quotedata = [
   },
   {
     quote: "When you have a dream, you've got to grab it and never let go.",
-    quoter: 'https://europa.eu/parturient/montes/nascetur/ridiculus/mus/etiam/vel.aspx',
+    quoter: 'David Goggins',
     user_id: 1
   },
   {
