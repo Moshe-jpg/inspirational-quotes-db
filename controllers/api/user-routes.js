@@ -48,12 +48,18 @@ router.post('/', (req, res) => {
     password: req.body.password
   })
     .then(dbUserData => {
+      const legitEmail=dbUserData.checkEmail(dbUserData.email);
+      if(legitEmail){
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
         res.json(dbUserData);
+      
       });
+    }else{
+      console.log("Not valid email ");
+    }
     })
     .catch(err => {
       console.log(err);
